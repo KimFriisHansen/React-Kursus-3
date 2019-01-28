@@ -1,0 +1,59 @@
+Test React-Redux - Test cases
+React-Kursus-3/test-react-jest-enzyme/lab-excercise-4/src/
+
+1. Test components
+file: App.test
+Test for App
+1.0 beforeEach(() => {
+  wrapped = shallow(<App />);
+});
+1.1 "shows a comment box"
+1.2 "shows comment list"
+
+file: CommentBox.test
+Test for:
+1.3 beforeEach(() => {
+  wrapped = mount(
+    <Root>
+      <CommentBox />
+    </Root>
+  );
+});
+1.4 afterEach(() => {
+  wrapped.unmount();
+});
+1.5 "has a text area & 2 buttons"
+1.6 "textarea & form events"
+1.7 "handles text input"
+1.8 "handles form submission"
+
+file: CommentList.test
+1.9 let wrapped;
+beforeEach(() => {q
+  const initialState = {
+    comments: ["Comment 1", "Comment 2"]
+  };
+  wrapped = mount(
+    <Root initialState={initialState}>
+      <CommentList />
+    </Root>
+  );
+});
+
+1.10 "creates one LI per comment" (HTML <li> Tag)
+1.11 "shows comment text"
+
+2. Test actions
+file: index.test
+Test for "saveComment"
+2.0 "has the correct type"
+2.1 "has the correct payload"
+
+3. Test reducers
+file: comments.test
+Test for "handles actions"
+3.0 "handles actions of type SAVE_COMMENT"
+3.1 "handles actions of type unknown"
+
+
+ 
